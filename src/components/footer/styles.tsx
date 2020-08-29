@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import { lighten } from 'polished';
 
+export const StyledFooter = styled.footer`
+  border-top: 1px solid rgba(92, 5, 39, 0.1);
+`;
+
 export const Container = styled.div`
-  width: 80%;
+  height: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: flex-end;

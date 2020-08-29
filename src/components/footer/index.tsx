@@ -1,11 +1,11 @@
 import React from 'react';
 import { MdFavorite } from 'react-icons/md';
 
-import { Container } from './styles';
+import { Container, StyledFooter } from './styles';
 
 const Footer: React.FC = () => {
   return (
-    <footer>
+    <StyledFooter>
       <Container>
         <p>
           Developed with
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           <a href="mailto:allandcarv@gmail.com">Allan Carvalho</a>
         </p>
       </Container>
-    </footer>
+    </StyledFooter>
   );
 };
 
