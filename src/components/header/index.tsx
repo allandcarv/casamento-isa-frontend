@@ -1,4 +1,4 @@
-import React, { useCallback, MouseEvent } from 'react';
+import React, { useState, useCallback, useRef, MouseEvent } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { MdMenu } from 'react-icons/md';
 
@@ -9,6 +9,8 @@ interface IHeader {
 }
 
 const Header: React.FC<IHeader> = ({ containerRefs }) => {
+  const [menuOpened, setMenuOpened] = useState(false);
+  const menuRef = useRef<HTMLUListElement>(null);
   const history = useHistory();
 
   const handleClick = useCallback(
@@ -22,6 +24,12 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
       if (containerRefs) {
         containerRefs.forEach(ref => {
           if (ref.current?.getAttribute('id') === targetId) {
+            if (window.innerWidth < 768) {
+              if (menuRef && menuRef.current) {
+                menuRef.current.style.left = '100vw';
+                setMenuOpened(!menuOpened);
+              }
+            }
             return ref.current.scrollIntoView({
               behavior: 'smooth',
               block: 'start',
@@ -34,13 +42,25 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
 
       return history.push(`/#${targetId}`);
     },
-    [containerRefs, history],
+    [containerRefs, history, menuOpened],
   );
+
+  const handleMobileMenu = useCallback(() => {
+    if (menuRef && menuRef.current) {
+      if (menuOpened) {
+        menuRef.current.style.left = '100vw';
+      } else {
+        menuRef.current.style.left = '30vw';
+      }
+    }
+
+    setMenuOpened(!menuOpened);
+  }, [menuOpened]);
 
   return (
     <StyledHeader>
       <Container>
-        <Menu>
+        <Menu ref={menuRef}>
           <li>
             <Link to="/#inicio" onClick={handleClick}>
               Início
@@ -92,9 +112,13 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
             </Link>
           </li>
         </Menu>
-        <span className="mobile_button">
+        <button
+          type="button"
+          className="mobile_button"
+          onClick={handleMobileMenu}
+        >
           <MdMenu size={30} color="#5c0527" />
-        </span>
+        </button>
       </Container>
     </StyledHeader>
   );
