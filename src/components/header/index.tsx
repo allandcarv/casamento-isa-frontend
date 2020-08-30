@@ -1,5 +1,6 @@
 import React, { useCallback, MouseEvent } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import { MdMenu } from 'react-icons/md';
 
 import { Container, Menu, StyledHeader } from './styles';
 
@@ -26,6 +27,8 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
               block: 'start',
             });
           }
+
+          return null;
         });
       }
 
@@ -89,6 +92,9 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
             </Link>
           </li>
         </Menu>
+        <span className="mobile_button">
+          <MdMenu size={30} color="#5c0527" />
+        </span>
       </Container>
     </StyledHeader>
   );

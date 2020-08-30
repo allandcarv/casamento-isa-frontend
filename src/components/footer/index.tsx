@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <Container>
         <p>
           Developed with
-          <MdFavorite size={20} color="#ff0000" />
+          <MdFavorite size={20} />
           by
           <a href="mailto:allandcarv@gmail.com">Allan Carvalho</a>
         </p>

@@ -62,7 +62,11 @@ const Home: React.FC = () => {
         <Container>
           <section id="inicio" ref={inicioRef}>
             <i />
-            <h1>Leonardo & Isabelle</h1>
+            <h1>
+              Leonardo
+              <span>&</span>
+              Isabelle
+            </h1>
             <p>23 de janeiro de 2021</p>
           </section>
           <section id="os-noivos" ref={osNoivosRef}>
