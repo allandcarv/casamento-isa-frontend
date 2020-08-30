@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Banner1 from '../../assets/images/banner1.svg';
 
 export const StyledMain = styled.main`
+  flex: 1;
+  margin-top: 60px;
   background-color: rgba(92, 5, 39, 0.1);
 `;
 
@@ -14,6 +16,7 @@ export const Container = styled.div`
 
   section {
     height: calc(100vh - 100px);
+    scroll-margin-top: 60px;
   }
 
   #inicio {

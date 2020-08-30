@@ -2,7 +2,14 @@ import styled from 'styled-components';
 import { lighten } from 'polished';
 
 export const StyledHeader = styled.header`
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fffafc;
   border-bottom: 1px solid rgba(92, 5, 39, 0.1);
+  z-index: 2;
 `;
 
 export const Container = styled.div`

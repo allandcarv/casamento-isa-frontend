@@ -48,29 +48,6 @@ export default createGlobalStyle`
     flex-direction: column;
   }
 
-  header {
-    height: 60px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #fffafc;
-  }
-
-  main {
-    flex: 1;
-    margin-top: 60px;
-  }
-
-  footer {
-    height: 40px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: #fffafc;
-  }
-
   button {
     cursor: pointer;
   }
