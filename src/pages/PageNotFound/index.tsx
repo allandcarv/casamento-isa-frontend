@@ -1,10 +1,16 @@
 import React from 'react';
 
+import Header from '../../components/header';
+import { StyledMain } from './styles';
+
 const PageNotFound: React.FC = () => (
-  <main>
-    <h1>Ooooooppssss...</h1>
-    <h2>Esta página que você acessou não existe...</h2>
-  </main>
+  <>
+    <Header />
+    <StyledMain>
+      <h1>Ooooooppssss...</h1>
+      <h2>Esta página que você acessou não existe...</h2>
+    </StyledMain>
+  </>
 );
 
 export default PageNotFound;

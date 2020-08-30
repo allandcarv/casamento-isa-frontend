@@ -1,12 +1,15 @@
 import React, { useCallback, MouseEvent } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 
 import { Container, Menu, StyledHeader } from './styles';
 
 interface IHeader {
-  containerRefs: React.RefObject<HTMLElement>[];
+  containerRefs?: React.RefObject<HTMLElement>[];
 }
 
 const Header: React.FC<IHeader> = ({ containerRefs }) => {
+  const history = useHistory();
+
   const handleClick = useCallback(
     (event: MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault();
@@ -15,13 +18,20 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
       const indexOfIdMark = elementHref.indexOf('#');
       const targetId = elementHref.substr(indexOfIdMark + 1);
 
-      containerRefs.forEach(ref => {
-        if (ref.current?.getAttribute('id') === targetId) {
-          ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+      if (containerRefs) {
+        containerRefs.forEach(ref => {
+          if (ref.current?.getAttribute('id') === targetId) {
+            return ref.current.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+        });
+      }
+
+      return history.push(`/#${targetId}`);
     },
-    [containerRefs],
+    [containerRefs, history],
   );
 
   return (
@@ -29,36 +39,54 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
       <Container>
         <Menu>
           <li>
-            <a href="#inicio" onClick={handleClick}>
+            <Link to="/#inicio" onClick={handleClick}>
               Início
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="sobre-nos">Os noivos</a>
+            <Link to="/#os-noivos" onClick={handleClick}>
+              Os noivos
+            </Link>
           </li>
           <li>
-            <a href="albuns">Álbuns</a>
+            <Link to="/#albuns" onClick={handleClick}>
+              Álbuns
+            </Link>
           </li>
           <li>
-            <a href="instagram">#NossaHashtag</a>
+            <Link to="/#instagram" onClick={handleClick}>
+              #NossaHashtag
+            </Link>
           </li>
           <li>
-            <a href="recados-aos-noivos">Post-It</a>
+            <Link to="/#post-it" onClick={handleClick}>
+              Post-It
+            </Link>
           </li>
           <li>
-            <a href="padrinhos-madrinhas">Padrinhos</a>
+            <Link to="/#padrinhos" onClick={handleClick}>
+              Padrinhos
+            </Link>
           </li>
           <li>
-            <a href="confirmacao-presenca">Você Vai?</a>
+            <Link to="/#voce-vai" onClick={handleClick}>
+              Você Vai?
+            </Link>
           </li>
           <li>
-            <a href="lista-presentes">Presentes</a>
+            <Link to="/#presentes" onClick={handleClick}>
+              Presentes
+            </Link>
           </li>
           <li>
-            <a href="local">Local</a>
+            <Link to="/#local" onClick={handleClick}>
+              Local
+            </Link>
           </li>
           <li>
-            <a href="fornecedores">Fornecedores</a>
+            <Link to="/#fornecedores" onClick={handleClick}>
+              Fornecedores
+            </Link>
           </li>
         </Menu>
       </Container>

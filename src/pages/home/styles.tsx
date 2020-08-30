@@ -5,6 +5,7 @@ import Banner1 from '../../assets/images/banner1.svg';
 export const StyledMain = styled.main`
   flex: 1;
   margin-top: 60px;
+  margin-bottom: 40px;
   background-color: rgba(92, 5, 39, 0.1);
 `;
 
