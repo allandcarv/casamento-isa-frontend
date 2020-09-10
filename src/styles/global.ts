@@ -42,6 +42,8 @@ export default createGlobalStyle`
   body {
     background-color: #fffafc;
     -webkit-font-smoothing: antialiased;
+    font-family: 'Lora', serif;
+    color: #5c0527;
   }
 
   #root {

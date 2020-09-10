@@ -24,11 +24,11 @@ export const Container = styled.div`
     padding: 0;
   }
 
-  section {
-    height: calc(100vh - 30px);
+  > section {
+    min-height: calc(100vh - 30px);
 
     @media only screen and (min-width: 768px) {
-      height: calc(100vh - 100px);
+      min-height: calc(100vh - 100px);
       scroll-margin-top: 60px;
     }
   }

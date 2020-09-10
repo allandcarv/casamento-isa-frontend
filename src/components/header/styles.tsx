@@ -64,12 +64,10 @@ export const Menu = styled.ul`
     }
 
     a {
-      font-family: 'Lora', serif;
       font-size: 1rem;
       text-transform: uppercase;
       text-decoration: none;
       letter-spacing: 1.2px;
-      color: #5c0527;
     }
   }
 

@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { StyledMain, Container } from './styles';
 
 import Header from '../../components/header';
+import SectionInstagram from './section-instagram';
 
 const Home: React.FC = () => {
   const containerRefs: React.RefObject<HTMLElement>[] = [];
@@ -75,9 +76,7 @@ const Home: React.FC = () => {
           <section id="albuns" ref={albunsRef}>
             <h1>Álbuns</h1>
           </section>
-          <section id="instagram" ref={instagramRef}>
-            <h1>#NossaHashtag</h1>
-          </section>
+          <SectionInstagram forwardedRef={instagramRef} />
           <section id="post-it" ref={postItRef}>
             <h1>Post-it</h1>
           </section>
