@@ -25,6 +25,7 @@ export const Container = styled.div`
   justify-content: flex-end;
 
   p {
+    font-family: 'Lora', serif;
     font-size: 0.8rem;
     color: rgba(92, 5, 39, 0.4);
 

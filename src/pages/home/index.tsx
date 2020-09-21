@@ -1,16 +1,20 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 
 import { StyledMain, Container } from './styles';
 
 import Header from '../../components/header';
 import SectionBanner from './section-banner';
+import SectionVamosCasar from './section-vamoscasar';
 import SectionInstagram from './section-instagram';
 
 const Home: React.FC = () => {
-  const containerRefs: React.RefObject<HTMLElement>[] = [];
+  const containerRefs: React.RefObject<HTMLElement>[] = useMemo(() => [], []);
 
   const inicioRef = useRef<HTMLElement>(null);
   containerRefs.push(inicioRef);
+
+  const vamosCasarRef = useRef<HTMLElement>(null);
+  containerRefs.push(vamosCasarRef);
 
   const osNoivosRef = useRef<HTMLElement>(null);
   containerRefs.push(osNoivosRef);
@@ -40,21 +44,22 @@ const Home: React.FC = () => {
   containerRefs.push(fornecedoresRef);
 
   useEffect(() => {
-    if (window.location.hash) {
-      containerRefs.forEach(ref => {
-        if (
-          ref.current &&
-          `#${ref.current?.getAttribute('id')}` === window.location.hash
-        ) {
-          return ref.current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }
+    function hashed() {
+      if (window.location.hash) {
+        const ref = containerRefs.find(
+          r => `#${r.current?.getAttribute('id')}` === window.location.hash,
+        );
 
-        return null;
-      });
+        return ref?.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+
+      return null;
     }
+
+    hashed();
   }, [containerRefs]);
 
   return (
@@ -63,6 +68,7 @@ const Home: React.FC = () => {
       <StyledMain>
         <Container>
           <SectionBanner forwardedRef={inicioRef} />
+          <SectionVamosCasar forwardedRef={vamosCasarRef} />
           <section id="os-noivos" ref={osNoivosRef}>
             <h1>Os noivos</h1>
           </section>
