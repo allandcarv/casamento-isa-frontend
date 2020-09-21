@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { StyledMain, Container } from './styles';
 
 import Header from '../../components/header';
+import SectionBanner from './section-banner';
 import SectionInstagram from './section-instagram';
 
 const Home: React.FC = () => {
@@ -61,15 +62,7 @@ const Home: React.FC = () => {
       <Header containerRefs={containerRefs} />
       <StyledMain>
         <Container>
-          <section id="inicio" ref={inicioRef}>
-            <i />
-            <h1>
-              Leonardo
-              <span>&</span>
-              Isabelle
-            </h1>
-            <p>23 de janeiro de 2021</p>
-          </section>
+          <SectionBanner forwardedRef={inicioRef} />
           <section id="os-noivos" ref={osNoivosRef}>
             <h1>Os noivos</h1>
           </section>

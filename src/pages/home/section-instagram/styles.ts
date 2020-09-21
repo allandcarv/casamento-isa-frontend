@@ -34,7 +34,7 @@ export const Container = styled.div`
       img {
         margin-top: 20px;
         max-width: 100%;
-        height: auto;
+        max-height: 100%;
         border-radius: 10px;
         box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
       }
@@ -42,6 +42,12 @@ export const Container = styled.div`
       strong {
         margin-top: 20px;
       }
+    }
+
+    @media only screen and (min-width: 768px) {
+      max-height: calc(100vh - 100px);
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
   }
 `;

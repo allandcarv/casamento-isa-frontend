@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+import AmsterdamFont from '../assets/fonts/Amsterdam.ttf';
 import LoraFont from '../assets/fonts/Lora-VariableFont_wght.ttf';
 import MarvelousSansOtf from '../assets/fonts/Marvelous-Sans-Demo.otf';
 import MarvelousSansWoff from '../assets/fonts/Marvelous-Sans-Demo.woff';
@@ -7,6 +8,12 @@ import MarvelousScriptOtf from '../assets/fonts/Marvelous-Script-Demo.otf';
 import MarvelousScriptWoff from '../assets/fonts/Marvelous-Script-Demo.woff';
 
 export default createGlobalStyle`
+  @font-face {
+    font-family: 'Amsterdam';
+    src: local('Amsterdam'),
+         url(${AmsterdamFont}) format('truetype');
+  }
+
   @font-face {
     font-family: 'Lora';
     src: local('Lora'),
@@ -42,7 +49,7 @@ export default createGlobalStyle`
   body {
     background-color: #fffafc;
     -webkit-font-smoothing: antialiased;
-    font-family: 'Lora', serif;
+    font-family: 'Amsterdam', cursive;
     color: #5c0527;
   }
 

@@ -10,19 +10,19 @@ interface ISectionInstagram {
   forwardedRef: RefObject<HTMLElement>;
 }
 
-interface IInstagram {
-  user: string;
-  photo: string;
+interface IPhotos {
+  media_url: string; //eslint-disable-line
+  permalink: string;
 }
 
 const SectionInstagram: React.FC<ISectionInstagram> = ({ forwardedRef }) => {
-  const [slides, setSlides] = useState<IInstagram[]>([]);
+  const [photos, setPhotos] = useState<IPhotos[]>([]);
 
   useEffect(() => {
     async function loadSlides() {
-      const response = await axios.get('hashtags');
+      const response = await axios.get('photos');
 
-      setSlides(response.data);
+      setPhotos(response.data);
     }
 
     loadSlides();
@@ -42,7 +42,6 @@ const SectionInstagram: React.FC<ISectionInstagram> = ({ forwardedRef }) => {
             pagination: false,
             autoWidth: true,
             autoHeight: true,
-            lazyLoad: 'nearby',
             breakpoints: {
               768: {
                 gap: '1rem',
@@ -50,10 +49,9 @@ const SectionInstagram: React.FC<ISectionInstagram> = ({ forwardedRef }) => {
             },
           }}
         >
-          {slides.map(slide => (
-            <SplideSlide key={slide.photo}>
-              <img data-splide-lazy={slide.photo} alt={slide.user} />
-              <strong>{`@${slide.user}`}</strong>
+          {photos.map(photo => (
+            <SplideSlide key={photo.media_url}>
+              <img src={photo.media_url} alt="" />
             </SplideSlide>
           ))}
         </Splide>
