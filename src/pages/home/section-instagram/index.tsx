@@ -30,7 +30,7 @@ const SectionInstagram: React.FC<ISectionInstagram> = ({ forwardedRef }) => {
 
   return (
     <StyledSection id="instagram" ref={forwardedRef}>
-      <h1>#CasamentoBelinhaELeo</h1>
+      <h1>#NossaHashtag</h1>
       <Container>
         <Splide
           options={{

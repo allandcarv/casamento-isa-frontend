@@ -5,6 +5,7 @@ import { StyledMain, Container } from './styles';
 import Header from '../../components/header';
 import SectionBanner from './section-banner';
 import SectionVamosCasar from './section-vamoscasar';
+import SectionOsNoivos from './section-osnoivos';
 import SectionInstagram from './section-instagram';
 
 const Home: React.FC = () => {
@@ -19,8 +20,8 @@ const Home: React.FC = () => {
   const osNoivosRef = useRef<HTMLElement>(null);
   containerRefs.push(osNoivosRef);
 
-  const albunsRef = useRef<HTMLElement>(null);
-  containerRefs.push(albunsRef);
+  const fotosRef = useRef<HTMLElement>(null);
+  containerRefs.push(fotosRef);
 
   const instagramRef = useRef<HTMLElement>(null);
   containerRefs.push(instagramRef);
@@ -69,11 +70,9 @@ const Home: React.FC = () => {
         <Container>
           <SectionBanner forwardedRef={inicioRef} />
           <SectionVamosCasar forwardedRef={vamosCasarRef} />
-          <section id="os-noivos" ref={osNoivosRef}>
-            <h1>Os noivos</h1>
-          </section>
-          <section id="albuns" ref={albunsRef}>
-            <h1>Álbuns</h1>
+          <SectionOsNoivos forwardedRef={osNoivosRef} />
+          <section id="fotos" ref={fotosRef}>
+            <h1>Fotos</h1>
           </section>
           <SectionInstagram forwardedRef={instagramRef} />
           <section id="post-it" ref={postItRef}>

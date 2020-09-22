@@ -6,7 +6,7 @@ export const StyledHeader = styled.header`
   position: fixed;
   top: 20px;
   left: 0;
-  z-index: 2;
+  z-index: 4;
 
   @media only screen and (min-width: 768px) {
     height: 60px;
@@ -64,10 +64,12 @@ export const Menu = styled.ul`
     }
 
     a {
+      font-family: 'Lora', serif;
       font-size: 1rem;
       text-transform: uppercase;
       text-decoration: none;
       letter-spacing: 1.2px;
+      color: #5c0527;
     }
   }
 
@@ -87,12 +89,6 @@ export const Menu = styled.ul`
       }
 
       a {
-        font-family: 'Lora', serif;
-        font-size: 1rem;
-        text-transform: uppercase;
-        text-decoration: none;
-        letter-spacing: 1.2px;
-        color: #5c0527;
         transition: color 0.3s;
 
         &:hover {

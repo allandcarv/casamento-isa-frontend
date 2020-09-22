@@ -49,7 +49,7 @@ export default createGlobalStyle`
   body {
     background-color: #fffafc;
     -webkit-font-smoothing: antialiased;
-    font-family: 'Amsterdam', cursive;
+    font-family: 'Parisienne', cursive;
     color: #5c0527;
   }
 

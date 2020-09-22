@@ -18,7 +18,7 @@ export const StyledSection = styled.section`
       brightness(100%) contrast(106%);
   }
 
-  h1 {
+  h1.main_title {
     font-family: 'MarvelousScript', cursive;
     font-size: 5rem;
     font-weight: normal;
@@ -31,11 +31,26 @@ export const StyledSection = styled.section`
   }
 
   p {
+    margin-top: 55px;
     font-family: 'Lora', serif;
     font-size: 1rem;
     font-style: italic;
     letter-spacing: 1px;
     color: #5c0527;
+  }
+
+  div.counter {
+    margin-top: 10px;
+
+    p {
+      margin-top: 5px;
+      font-size: 0.8rem;
+
+      strong {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -49,7 +64,7 @@ export const StyledSection = styled.section`
       margin: 0 auto;
     }
 
-    h1 {
+    h1.main_title {
       font-size: 10rem;
 
       span {
