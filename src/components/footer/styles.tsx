@@ -8,7 +8,7 @@ export const StyledFooter = styled.footer`
   bottom: 0;
   left: 0;
   background-color: #fffafc;
-  z-index: 2;
+  z-index: 4;
 
   @media only screen and (min-width: 768px) {
     height: 40px;

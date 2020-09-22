@@ -28,9 +28,9 @@ const VamosCasar: React.FC<ISectionVamosCasar> = ({ forwardedRef }) => {
 
       <p>
         Cada secão tem a sua importância e foi pensada com muito carinho.
-        Pedimos principalmente que você dê uma atenção especial a aba
-        COMPARECIMENTO pois lá é onde você informará se vai ou não ao casamento.
-        Por favor, confirme o mais rápido possível. Isso nos ajudará bastante na
+        Pedimos principalmente que você dê uma atenção especial a aba PRESENÇA
+        pois lá é onde você informará se vai ou não ao casamento. Por favor,
+        confirme o mais rápido possível. Isso nos ajudará bastante na
         organização de tudo.
       </p>
 

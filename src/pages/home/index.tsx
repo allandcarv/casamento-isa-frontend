@@ -20,20 +20,17 @@ const Home: React.FC = () => {
   const osNoivosRef = useRef<HTMLElement>(null);
   containerRefs.push(osNoivosRef);
 
-  const fotosRef = useRef<HTMLElement>(null);
-  containerRefs.push(fotosRef);
+  const albumRef = useRef<HTMLElement>(null);
+  containerRefs.push(albumRef);
 
   const instagramRef = useRef<HTMLElement>(null);
   containerRefs.push(instagramRef);
 
-  const postItRef = useRef<HTMLElement>(null);
-  containerRefs.push(postItRef);
+  const mensagensRef = useRef<HTMLElement>(null);
+  containerRefs.push(mensagensRef);
 
-  const padrinhosRef = useRef<HTMLElement>(null);
-  containerRefs.push(padrinhosRef);
-
-  const voceVaiRef = useRef<HTMLElement>(null);
-  containerRefs.push(voceVaiRef);
+  const presencaRef = useRef<HTMLElement>(null);
+  containerRefs.push(presencaRef);
 
   const presentesRef = useRef<HTMLElement>(null);
   containerRefs.push(presentesRef);
@@ -71,18 +68,15 @@ const Home: React.FC = () => {
           <SectionBanner forwardedRef={inicioRef} />
           <SectionVamosCasar forwardedRef={vamosCasarRef} />
           <SectionOsNoivos forwardedRef={osNoivosRef} />
-          <section id="fotos" ref={fotosRef}>
-            <h1>Fotos</h1>
+          <section id="album" ref={albumRef}>
+            <h1>Álbum</h1>
           </section>
           <SectionInstagram forwardedRef={instagramRef} />
-          <section id="post-it" ref={postItRef}>
-            <h1>Post-it</h1>
+          <section id="mensagens" ref={mensagensRef}>
+            <h1>Mensagens</h1>
           </section>
-          <section id="padrinhos" ref={padrinhosRef}>
-            <h1>Padrinhos</h1>
-          </section>
-          <section id="voce-vai" ref={voceVaiRef}>
-            <h1>Você vai?</h1>
+          <section id="presenca" ref={presencaRef}>
+            <h1>Presença</h1>
           </section>
           <section id="presentes" ref={presentesRef}>
             <h1>Listas de Presentes</h1>

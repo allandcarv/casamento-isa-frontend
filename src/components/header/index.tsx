@@ -77,8 +77,8 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
             </Link>
           </li>
           <li>
-            <Link to="/#fotos" onClick={handleClick}>
-              Fotos
+            <Link to="/#album" onClick={handleClick}>
+              Álbum
             </Link>
           </li>
           <li>
@@ -87,13 +87,13 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
             </Link>
           </li>
           <li>
-            <Link to="/#post-it" onClick={handleClick}>
-              Post-It
+            <Link to="/#mensagens" onClick={handleClick}>
+              Mensagens
             </Link>
           </li>
           <li>
-            <Link to="/#voce-vai" onClick={handleClick}>
-              Você Vai?
+            <Link to="/#presenca" onClick={handleClick}>
+              Presença
             </Link>
           </li>
           <li>

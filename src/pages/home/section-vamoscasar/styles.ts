@@ -17,9 +17,6 @@ export const StyledSection = styled.section`
 
   @media only screen and (min-width: 768px) {
     p {
-      width: 50%;
-      margin-left: auto;
-      margin-right: auto;
       font-size: 1.2rem;
     }
   }
