@@ -30,6 +30,7 @@ export const Container = styled.div`
     h1 {
       font-size: 2rem;
       font-weight: normal;
+      text-align: center;
     }
 
     @media only screen and (min-width: 768px) {

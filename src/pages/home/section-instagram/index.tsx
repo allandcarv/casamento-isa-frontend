@@ -1,10 +1,9 @@
 import React, { useState, useEffect, RefObject } from 'react';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/themes/splide-default.min.css'; //eslint-disable-line
+import Swiper from 'react-id-swiper';
 
 import axios from '../../../services/axios';
 
-import { StyledSection, Container } from './styles';
+import { StyledSection } from './styles';
 
 interface ISectionInstagram {
   forwardedRef: RefObject<HTMLElement>;
@@ -18,6 +17,18 @@ interface IPhotos {
 const SectionInstagram: React.FC<ISectionInstagram> = ({ forwardedRef }) => {
   const [photos, setPhotos] = useState<IPhotos[]>([]);
 
+  const swiperOptions = {
+    spaceBetween: 10,
+    slidesPerView: 1,
+    observer: true,
+    breakpoints: {
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  };
+
   useEffect(() => {
     async function loadSlides() {
       const response = await axios.get('photos');
@@ -30,32 +41,23 @@ const SectionInstagram: React.FC<ISectionInstagram> = ({ forwardedRef }) => {
 
   return (
     <StyledSection id="instagram" ref={forwardedRef}>
-      <h1>#NossaHashtag</h1>
-      <Container>
-        <Splide
-          options={{
-            rewind: true,
-            perPage: 1,
-            focus: 'center',
-            trimSpace: false,
-            gap: '2rem',
-            pagination: false,
-            autoWidth: true,
-            autoHeight: true,
-            breakpoints: {
-              768: {
-                gap: '1rem',
-              },
-            },
-          }}
-        >
+      <h1>Nossa Hashtag</h1>
+
+      <p>
+        A Hashtag oficial do nosso casamento é #CasamentoBelinhaELeo. As fotos
+        que são postadas no Instagram com esta Hashtag serão exibidas neste
+        espaço, e com sua ajuda ficará incrível.
+      </p>
+
+      <div>
+        <Swiper {...swiperOptions}>
           {photos.map(photo => (
-            <SplideSlide key={photo.media_url}>
+            <div key={photo.media_url}>
               <img src={photo.media_url} alt="" />
-            </SplideSlide>
+            </div>
           ))}
-        </Splide>
-      </Container>
+        </Swiper>
+      </div>
     </StyledSection>
   );
 };

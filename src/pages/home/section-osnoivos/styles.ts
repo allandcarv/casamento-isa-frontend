@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   div.pictures {
+    margin-top: 30px;
     margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
