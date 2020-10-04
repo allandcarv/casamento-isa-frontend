@@ -6,6 +6,7 @@ import Header from '../../components/header';
 import SectionBanner from './section-banner';
 import SectionVamosCasar from './section-vamoscasar';
 import SectionOsNoivos from './section-osnoivos';
+import SectionAlbuns from './section-albuns';
 import SectionInstagram from './section-instagram';
 
 const Home: React.FC = () => {
@@ -66,11 +67,13 @@ const Home: React.FC = () => {
       <StyledMain>
         <Container>
           <SectionBanner forwardedRef={inicioRef} />
+
           <SectionVamosCasar forwardedRef={vamosCasarRef} />
+
           <SectionOsNoivos forwardedRef={osNoivosRef} />
-          <section id="album" ref={albumRef}>
-            <h1>Álbum</h1>
-          </section>
+
+          <SectionAlbuns forwardedRef={albumRef} />
+
           <SectionInstagram forwardedRef={instagramRef} />
           <section id="mensagens" ref={mensagensRef}>
             <h1>Mensagens</h1>
