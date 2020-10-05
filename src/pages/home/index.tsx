@@ -8,6 +8,7 @@ import SectionVamosCasar from './section-vamoscasar';
 import SectionOsNoivos from './section-osnoivos';
 import SectionAlbuns from './section-albuns';
 import SectionInstagram from './section-instagram';
+import SectionPresenca from './section-presenca';
 
 const Home: React.FC = () => {
   const containerRefs: React.RefObject<HTMLElement>[] = useMemo(() => [], []);
@@ -75,12 +76,13 @@ const Home: React.FC = () => {
           <SectionAlbuns forwardedRef={albumRef} />
 
           <SectionInstagram forwardedRef={instagramRef} />
+
           <section id="mensagens" ref={mensagensRef}>
             <h1>Mensagens</h1>
           </section>
-          <section id="presenca" ref={presencaRef}>
-            <h1>Presença</h1>
-          </section>
+
+          <SectionPresenca forwardedRef={presencaRef} />
+
           <section id="presentes" ref={presentesRef}>
             <h1>Listas de Presentes</h1>
           </section>
