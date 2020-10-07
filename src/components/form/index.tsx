@@ -8,6 +8,8 @@ import React, {
 } from 'react';
 import * as Yup from 'yup';
 
+import { toast } from 'react-toastify';
+
 import { StyledForm } from './styles';
 
 import { LoadingContext } from '../../context/LoadingContext';
@@ -173,6 +175,14 @@ const Form: React.FC<IForm> = ({ elements, urlPath, ...rest }) => {
       }
     } finally {
       setLoading(false);
+      toast.success(
+        urlPath === 'confirmation'
+          ? 'Obrigado por confirmar.'
+          : 'Obrigado pela mensagem.',
+        {
+          className: 'custom_success',
+        },
+      );
     }
   }
 
