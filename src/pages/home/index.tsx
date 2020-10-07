@@ -1,8 +1,11 @@
-import React, { useEffect, useRef, useMemo } from 'react';
+import React, { useEffect, useRef, useMemo, useContext } from 'react';
 
-import { StyledMain, Container } from './styles';
+import { StyledMain, Container, LoadingContainer } from './styles';
+
+import { LoadingContext } from '../../context/LoadingContext';
 
 import Header from '../../components/header';
+import Loading from '../../components/loading';
 import SectionBanner from './section-banner';
 import SectionVamosCasar from './section-vamoscasar';
 import SectionOsNoivos from './section-osnoivos';
@@ -43,6 +46,8 @@ const Home: React.FC = () => {
   const fornecedoresRef = useRef<HTMLElement>(null);
   containerRefs.push(fornecedoresRef);
 
+  const { loading } = useContext(LoadingContext);
+
   useEffect(() => {
     function hashed() {
       if (window.location.hash) {
@@ -67,6 +72,11 @@ const Home: React.FC = () => {
       <Header containerRefs={containerRefs} />
       <StyledMain>
         <Container>
+          {loading && (
+            <LoadingContainer>
+              <Loading />
+            </LoadingContainer>
+          )}
           <SectionBanner forwardedRef={inicioRef} />
 
           <SectionVamosCasar forwardedRef={vamosCasarRef} />

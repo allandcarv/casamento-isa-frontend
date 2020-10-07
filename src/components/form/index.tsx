@@ -4,13 +4,17 @@ import React, {
   FormHTMLAttributes,
   useState,
   useMemo,
+  useContext,
 } from 'react';
 import * as Yup from 'yup';
 
 import { StyledForm } from './styles';
 
+import { LoadingContext } from '../../context/LoadingContext';
+
 import Input from './input';
 import TextArea from './textarea';
+import api from '../../services/axios';
 
 interface IFormElement {
   type: string;
@@ -25,13 +29,18 @@ interface IFormElement {
 
 interface IForm extends FormHTMLAttributes<HTMLFormElement> {
   elements: IFormElement[];
+  urlPath: string;
 }
 
-const Form: React.FC<IForm> = ({ elements, ...rest }) => {
-  const elementsState = elements.reduce((acc, element) => {
-    acc = { ...acc, [element.name]: '' }; //eslint-disable-line
-    return acc;
-  }, {});
+const Form: React.FC<IForm> = ({ elements, urlPath, ...rest }) => {
+  const elementsState = useMemo(() => {
+    return elements.reduce((acc, element) => {
+      acc = { ...acc, [element.name]: '' }; //eslint-disable-line
+      return acc;
+    }, {});
+  }, [elements]);
+
+  const { setLoading } = useContext(LoadingContext);
 
   const schema = useMemo(() => {
     const shape = elements.reduce((final, current) => {
@@ -91,11 +100,13 @@ const Form: React.FC<IForm> = ({ elements, ...rest }) => {
   function handleChange(
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
-    const { name, value } = event.currentTarget;
+    const { name, value, type } = event.currentTarget;
 
     setErrors({ ...errors, [name]: '' });
 
-    setFormData({ ...formData, [name]: value });
+    const newValue = type === 'number' ? Number(value) : value;
+
+    setFormData({ ...formData, [name]: newValue });
   }
 
   async function handleBlur(
@@ -138,19 +149,30 @@ const Form: React.FC<IForm> = ({ elements, ...rest }) => {
     setErrors(elementsState);
 
     try {
+      setLoading(true);
       await schema.validate(formData, { abortEarly: false });
-    } catch (err) {
-      const newState = err.inner.reduce(
-        (acc: Record<string, unknown>, current: Yup.ValidationError) => {
-          const { path, message } = current;
 
-          acc = { ...acc, [path]: message }; //eslint-disable-line
-          return acc;
-        },
-        {},
-      );
+      await api.post(urlPath, { ...formData });
 
-      setErrors(newState);
+      setFormData(elementsState);
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        const newState = error.inner.reduce(
+          (acc: Record<string, unknown>, current: Yup.ValidationError) => {
+            const { path, message } = current;
+
+            acc = { ...acc, [path]: message }; //eslint-disable-line
+            return acc;
+          },
+          {},
+        );
+
+        setErrors(newState);
+      } else {
+        console.error(error);
+      }
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -166,6 +188,7 @@ const Form: React.FC<IForm> = ({ elements, ...rest }) => {
                   <input
                     type={element.type}
                     name={element.name}
+                    checked={value === formData[element.name]}
                     value={value}
                     id={value}
                     required={element.required}
@@ -184,6 +207,7 @@ const Form: React.FC<IForm> = ({ elements, ...rest }) => {
               rows={5}
               style={{ resize: 'none' }}
               placeholder={element.placeholder || ''}
+              value={formData[element.name]}
               required={element.required}
               onChange={handleChange}
               isErrored={errors[element.name]}
@@ -196,6 +220,7 @@ const Form: React.FC<IForm> = ({ elements, ...rest }) => {
               name={element.name}
               id={element.id}
               placeholder={element.placeholder || ''}
+              value={formData[element.name]}
               required={element.required}
               onChange={handleChange}
               onBlur={handleBlur}

@@ -66,7 +66,7 @@ const Presenca: React.FC<ISectionPresenca> = ({ forwardedRef }) => {
         precisamos que você preencha este formulário.
       </p>
 
-      <Form elements={elements} noValidate />
+      <Form elements={elements} urlPath="confirmation" noValidate />
     </StyledSection>
   );
 };

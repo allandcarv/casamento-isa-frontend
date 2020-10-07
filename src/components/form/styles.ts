@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
 export const StyledForm = styled.form`
   width: 100%;
@@ -43,6 +44,11 @@ export const StyledForm = styled.form`
     border: none;
     border-radius: 0.25rem;
     background-color: #5c0527;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: ${lighten(0.1, '#5c0527')};
+    }
   }
 
   span.error_msg {
