@@ -10,53 +10,27 @@ export const StyledForm = styled.form`
 
   > div {
     width: 100%;
+    position: relative;
+    padding-bottom: 25px;
 
-    input:not([type='radio']),
-    textarea {
-      width: 100%;
-      padding: 0.375rem 0.75rem;
-      border: 1px solid #ced4da;
-      background-color: #fff;
-      border-radius: 0.25rem;
-      margin-bottom: 20px;
-      font-family: 'Lora', sans-serif;
-      font-size: 1rem;
-    }
+    &.radio_group {
+      span {
+        display: block;
+        margin-bottom: 5px;
+      }
 
-    input:not([type='radio']) {
-      height: 40px;
-    }
-  }
-
-  div.radio_group {
-    width: 100%;
-    margin-bottom: 20px;
-
-    span {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-
-    label {
-      margin-right: 20px;
-      display: block;
-
-      input {
-        width: initial;
-        margin-right: 10px;
+      label {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
       }
     }
-  }
 
-  textarea {
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    border: 1px solid #ced4da;
-    background-color: #fff;
-    border-radius: 0.25rem;
-    margin-bottom: 20px;
-    font-family: 'Lora', sans-serif;
-    font-size: 1rem;
+    input[type='radio'] {
+      width: 13px;
+      margin-right: 5px;
+    }
   }
 
   button {
@@ -69,5 +43,13 @@ export const StyledForm = styled.form`
     border: none;
     border-radius: 0.25rem;
     background-color: #5c0527;
+  }
+
+  span.error_msg {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    font-size: 0.8rem;
+    color: #c53030;
   }
 `;

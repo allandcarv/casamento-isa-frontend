@@ -61,15 +61,9 @@ const Presenca: React.FC<ISectionPresenca> = ({ forwardedRef }) => {
     <StyledSection id="presenca" ref={forwardedRef}>
       <h1>Confirmação de Presença</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id nisl
-        ut nisl mollis eleifend ut sodales urna. Nam tincidunt mauris non
-        lacinia ullamcorper. Curabitur aliquam, purus in pellentesque commodo,
-        nisi ante bibendum lorem, ut mattis quam diam sodales mi. Integer orci
-        arcu, lobortis a lacus sit amet, tempor laoreet urna. Ut eget ligula
-        dignissim, auctor dolor ullamcorper, aliquam dui. Duis vulputate
-        ultricies sodales. Suspendisse eu sapien suscipit lectus ornare gravida.
-        Suspendisse sodales risus arcu, eget lacinia tortor maximus et.
-        Phasellus porta tortor et imperdiet sollicitudin.
+        Para podermos preparar tudo com ainda mais carinho, é muito importante
+        para nós saber se você vai (ficaremos muito felizes se sim), só
+        precisamos que você preencha este formulário.
       </p>
 
       <Form elements={elements} noValidate />

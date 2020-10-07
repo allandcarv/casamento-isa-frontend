@@ -14,70 +14,38 @@ export const StyledSection = styled.section`
 
   p {
     margin: 40px 0 20px;
-    font-family: 'Lora', sans-serif;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: center;
   }
 
-  form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    font-family: 'Lora', sans-serif;
-
-    > input {
-      width: 100%;
-      height: 40px;
-      padding: 0.375rem 0.75rem;
-      border: 1px solid #ced4da;
-      background-color: #fff;
-      border-radius: 0.25rem;
-      margin-bottom: 20px;
-      font-family: 'Lora', sans-serif;
-      font-size: 1rem;
+  @media only screen and (min-width: 768px) {
+    p {
+      width: 60%;
+      min-width: 650px;
+      margin-top: 60px;
+      text-align: left;
     }
 
-    div.radio_group {
-      width: 100%;
-      display: flex;
+    form {
+      width: 60%;
+      min-width: 650px;
+      flex-direction: row;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      justify-content: flex-start;
 
-      span {
-        width: 100%;
-        margin-bottom: 10px;
+      div.radio_group {
+        width: 25%;
       }
 
-      label {
-        margin-right: 20px;
+      div.number_group {
+        width: 35%;
 
-        input {
-          margin-right: 10px;
+        & + .number_group {
+          margin-left: 5%;
         }
       }
-    }
-
-    textarea {
-      width: 100%;
-      padding: 0.375rem 0.75rem;
-      border: 1px solid #ced4da;
-      background-color: #fff;
-      border-radius: 0.25rem;
-      margin-bottom: 20px;
-      font-family: 'Lora', sans-serif;
-      font-size: 1rem;
-    }
-
-    button {
-      padding: 0.375rem 0.75rem;
-      font-family: 'Lora', sans-serif;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: bold;
-      line-height: 1.5;
-      border: none;
-      border-radius: 0.25rem;
-      background-color: #5c0527;
     }
   }
 `;

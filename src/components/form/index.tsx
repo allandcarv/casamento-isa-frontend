@@ -9,6 +9,9 @@ import * as Yup from 'yup';
 
 import { StyledForm } from './styles';
 
+import Input from './input';
+import TextArea from './textarea';
+
 interface IFormElement {
   type: string;
   placeholder?: string;
@@ -104,7 +107,7 @@ const Form: React.FC<IForm> = ({ elements, ...rest }) => {
       return setErrors({ ...errors, [name]: 'Campo obrigatório.' });
     }
 
-    if (type === 'number') { //eslint-disable-line
+    if (type === 'number') {
       try {
         const numberSchema = Yup.number()
           .typeError('Digite um número.')
@@ -175,7 +178,7 @@ const Form: React.FC<IForm> = ({ elements, ...rest }) => {
           )}
 
           {element.type === 'textarea' && (
-            <textarea
+            <TextArea
               id={element.id}
               name={element.id}
               rows={5}
@@ -183,11 +186,12 @@ const Form: React.FC<IForm> = ({ elements, ...rest }) => {
               placeholder={element.placeholder || ''}
               required={element.required}
               onChange={handleChange}
+              isErrored={errors[element.name]}
             />
           )}
 
           {element.type !== 'textarea' && element.type !== 'radio' && (
-            <input
+            <Input
               type={element.type}
               name={element.name}
               id={element.id}
@@ -195,10 +199,13 @@ const Form: React.FC<IForm> = ({ elements, ...rest }) => {
               required={element.required}
               onChange={handleChange}
               onBlur={handleBlur}
+              isErrored={errors[element.name]}
             />
           )}
 
-          {errors[element.name] && <span>{errors[element.name]}</span>}
+          {errors[element.name] && (
+            <span className="error_msg">{errors[element.name]}</span>
+          )}
         </div>
       ))}
 
