@@ -27,15 +27,18 @@ export const StyledSection = styled.section`
     justify-content: center;
     align-items: center;
     padding-bottom: 20px;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(
-      to left,
-      transparent,
-      #5c0527,
-      transparent
-    );
+
+    &:not(:last-of-type) {
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(
+        to left,
+        transparent,
+        #5c0527,
+        transparent
+      );
+    }
 
     & + div {
       margin-top: 20px;
@@ -43,6 +46,19 @@ export const StyledSection = styled.section`
 
     img {
       margin: 20px 0;
+    }
+
+    .instagram_link {
+      display: flex;
+      align-items: center;
+      font-family: 'Lora', serif;
+      color: #5c0527;
+      text-decoration: none;
+
+      svg {
+        margin-right: 5px;
+        font-size: 1.2rem;
+      }
     }
   }
 

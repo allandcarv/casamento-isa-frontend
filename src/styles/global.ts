@@ -40,10 +40,8 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: #fffafc;
+    background-color: #EEE5E8;
     -webkit-font-smoothing: antialiased;
-    font-family: 'Parisienne', cursive;
-    color: #5c0527;
   }
 
   #root {

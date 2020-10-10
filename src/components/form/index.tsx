@@ -157,6 +157,14 @@ const Form: React.FC<IForm> = ({ elements, urlPath, ...rest }) => {
       await api.post(urlPath, { ...formData });
 
       setFormData(elementsState);
+      toast.success(
+        urlPath === 'confirmation'
+          ? 'Obrigado por confirmar.'
+          : 'Obrigado pela mensagem.',
+        {
+          className: 'custom_success',
+        },
+      );
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         const newState = error.inner.reduce(
@@ -175,14 +183,6 @@ const Form: React.FC<IForm> = ({ elements, urlPath, ...rest }) => {
       }
     } finally {
       setLoading(false);
-      toast.success(
-        urlPath === 'confirmation'
-          ? 'Obrigado por confirmar.'
-          : 'Obrigado pela mensagem.',
-        {
-          className: 'custom_success',
-        },
-      );
     }
   }
 

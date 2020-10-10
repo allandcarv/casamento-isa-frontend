@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useMemo, useContext } from 'react';
 
-import { StyledMain, Container, LoadingContainer } from './styles';
+import { StyledMain, LoadingContainer } from './styles';
 
 import { LoadingContext } from '../../context/LoadingContext';
 
@@ -75,32 +75,30 @@ const Home: React.FC = () => {
     <>
       <Header containerRefs={containerRefs} />
       <StyledMain>
-        <Container>
-          {loading && (
-            <LoadingContainer>
-              <Loading />
-            </LoadingContainer>
-          )}
-          <SectionBanner forwardedRef={inicioRef} />
+        {loading && (
+          <LoadingContainer>
+            <Loading />
+          </LoadingContainer>
+        )}
+        <SectionBanner forwardedRef={inicioRef} />
 
-          <SectionVamosCasar forwardedRef={vamosCasarRef} />
+        <SectionVamosCasar forwardedRef={vamosCasarRef} />
 
-          <SectionOsNoivos forwardedRef={osNoivosRef} />
+        <SectionOsNoivos forwardedRef={osNoivosRef} />
 
-          <SectionAlbuns forwardedRef={albumRef} />
+        <SectionAlbuns forwardedRef={albumRef} />
 
-          <SectionInstagram forwardedRef={instagramRef} />
+        <SectionInstagram forwardedRef={instagramRef} />
 
-          <SectionMensagens forwardedRef={mensagensRef} />
+        <SectionMensagens forwardedRef={mensagensRef} />
 
-          <SectionPresenca forwardedRef={presencaRef} />
+        <SectionPresenca forwardedRef={presencaRef} />
 
-          <SectionPresentes forwardedRef={presentesRef} />
+        <SectionPresentes forwardedRef={presentesRef} />
 
-          <SectionLocal forwardedRef={localRef} />
+        <SectionLocal forwardedRef={localRef} />
 
-          <SectionFornecedores forwardedRef={fornecedoresRef} />
-        </Container>
+        <SectionFornecedores forwardedRef={fornecedoresRef} />
       </StyledMain>
     </>
   );

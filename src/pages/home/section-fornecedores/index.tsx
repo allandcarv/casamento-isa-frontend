@@ -1,4 +1,5 @@
 import React, { RefObject } from 'react';
+import { AiOutlineInstagram } from 'react-icons/ai';
 
 import { StyledSection } from './styles';
 
@@ -25,6 +26,15 @@ const Fornecedores: React.FC<ISectionFornecedores> = ({ forwardedRef }) => {
           <img src={MarriageDocesFinos} alt="Marriage Doces Finos" />
         </a>
         <span>Marriage Doces Finos</span>
+        <a
+          rel="noopener noreferrer"
+          href="https://instagram.com/marriage_docesfinos"
+          target="_blank"
+          className="instagram_link"
+        >
+          <AiOutlineInstagram />
+          @marriage_docesfinos
+        </a>
       </div>
 
       <div className="fornecedor">
@@ -37,6 +47,15 @@ const Fornecedores: React.FC<ISectionFornecedores> = ({ forwardedRef }) => {
           <img src={AnaKarenina} alt="Ana Karenina" />
         </a>
         <span>Ana Karenina</span>
+        <a
+          rel="noopener noreferrer"
+          href="https://instagram.com/anakareninabronzeado"
+          target="_blank"
+          className="instagram_link"
+        >
+          <AiOutlineInstagram />
+          @anakareninabronzeado
+        </a>
       </div>
 
       <div className="fornecedor">
@@ -49,6 +68,15 @@ const Fornecedores: React.FC<ISectionFornecedores> = ({ forwardedRef }) => {
           <img src={MarcosAzevedo} alt="Marcos Azevedo" />
         </a>
         <span>Marcos Azevedo</span>
+        <a
+          rel="noopener noreferrer"
+          href="https://instagram.com/marcosazevedoft"
+          target="_blank"
+          className="instagram_link"
+        >
+          <AiOutlineInstagram />
+          @marcosazevedoft
+        </a>
       </div>
 
       <div className="fornecedor">
@@ -61,6 +89,15 @@ const Fornecedores: React.FC<ISectionFornecedores> = ({ forwardedRef }) => {
           <img src={GilsonMatias} alt="Gilson Matias" />
         </a>
         <span>Gilson Matias</span>
+        <a
+          rel="noopener noreferrer"
+          href="https://instagram.com/gilsonmatias_"
+          target="_blank"
+          className="instagram_link"
+        >
+          <AiOutlineInstagram />
+          @gilsonmatias_
+        </a>
       </div>
     </StyledSection>
   );
