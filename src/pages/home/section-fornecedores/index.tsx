@@ -33,7 +33,7 @@ const Fornecedores: React.FC<ISectionFornecedores> = ({ forwardedRef }) => {
           className="instagram_link"
         >
           <AiOutlineInstagram />
-          @marriage_docesfinos
+          <span>@marriage_docesfinos</span>
         </a>
       </div>
 
@@ -54,7 +54,7 @@ const Fornecedores: React.FC<ISectionFornecedores> = ({ forwardedRef }) => {
           className="instagram_link"
         >
           <AiOutlineInstagram />
-          @anakareninabronzeado
+          <span>@anakareninabronzeado</span>
         </a>
       </div>
 
@@ -75,7 +75,7 @@ const Fornecedores: React.FC<ISectionFornecedores> = ({ forwardedRef }) => {
           className="instagram_link"
         >
           <AiOutlineInstagram />
-          @marcosazevedoft
+          <span>@marcosazevedoft</span>
         </a>
       </div>
 
@@ -96,7 +96,7 @@ const Fornecedores: React.FC<ISectionFornecedores> = ({ forwardedRef }) => {
           className="instagram_link"
         >
           <AiOutlineInstagram />
-          @gilsonmatias_
+          <span>@gilsonmatias_</span>
         </a>
       </div>
     </StyledSection>

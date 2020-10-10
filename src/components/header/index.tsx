@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useRef, MouseEvent } from 'react';
 import { useHistory, Link } from 'react-router-dom';
-import { MdMenu } from 'react-icons/md';
+import { MdMenu, MdClose } from 'react-icons/md';
 
-import { Container, Menu, StyledHeader } from './styles';
+import { Container, Menu, BackgroundMenu, StyledHeader } from './styles';
 
 interface IHeader {
   containerRefs?: React.RefObject<HTMLElement>[];
@@ -45,7 +45,7 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
     [containerRefs, history, menuOpened],
   );
 
-  const handleMobileMenu = useCallback(() => {
+  function handleMenuMobile() {
     if (menuRef && menuRef.current) {
       if (menuOpened) {
         menuRef.current.style.left = '100vw';
@@ -55,12 +55,16 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
     }
 
     setMenuOpened(!menuOpened);
-  }, [menuOpened]);
+  }
 
   return (
     <StyledHeader>
       <Container>
+        <BackgroundMenu isOpened={menuOpened} />
         <Menu ref={menuRef}>
+          <li className="close_buttom">
+            <MdClose size={30} color="#5c0527" onClick={handleMenuMobile} />
+          </li>
           <li>
             <Link to="/#inicio" onClick={handleClick}>
               Início
@@ -115,7 +119,7 @@ const Header: React.FC<IHeader> = ({ containerRefs }) => {
         <button
           type="button"
           className="mobile_button"
-          onClick={handleMobileMenu}
+          onClick={handleMenuMobile}
         >
           <MdMenu size={30} color="#5c0527" />
         </button>

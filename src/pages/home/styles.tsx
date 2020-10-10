@@ -29,35 +29,16 @@ export const StyledMain = styled.main`
   }
 
   @media only screen and (min-width: 768px) {
-    margin-top: 60px;
-  }
-`;
-
-export const Container = styled.div`
-  @media only screen and (min-width: 768px) {
     width: 90%;
-    margin: 0 auto;
+    margin: 60px auto 40px;
     padding: 0;
-  }
 
-  > section {
-    min-height: calc(100vh - 30px);
-    padding-top: 60px;
-    padding-bottom: 60px;
-    margin-bottom: 5px;
-
-    h1 {
-    }
-
-    @media only screen and (min-width: 768px) {
+    > section {
       min-height: calc(100vh - 100px);
       scroll-margin-top: 60px;
-      padding: 60px;
 
-      > section {
-        & + section {
-          margin-bottom: 20px;
-        }
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
       }
 
       h1 {

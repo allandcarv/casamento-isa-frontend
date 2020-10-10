@@ -67,19 +67,38 @@ export const StyledSection = styled.section`
 
     .fornecedor {
       width: 25%;
-      border-bottom-width: 0;
-      border-bottom-style: none;
+      margin: 0;
 
-      & + div {
-        margin-top: 0;
-        border-left-width: 2px;
-        border-left-style: solid;
+      &:not(:last-of-type) {
+        border-bottom-width: 0;
+        border-bottom-style: none;
+        border-right-width: 2px;
+        border-right-style: solid;
+        border-image-slice: 1;
         border-image-source: linear-gradient(
           to bottom,
           transparent,
           #5c0527,
           transparent
         );
+      }
+
+      img {
+        transition: transform 0.4s;
+      }
+
+      img:hover {
+        transform: scale(0.95);
+      }
+
+      .instagram_link span {
+        position: relative;
+        top: 0;
+        transition: top 0.4s;
+      }
+
+      .instagram_link:hover span {
+        top: -3px;
       }
     }
   }

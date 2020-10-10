@@ -1,5 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
+
+interface IBackgroundMenu {
+  isOpened: boolean;
+}
 
 export const StyledHeader = styled.header`
   width: 100%;
@@ -44,9 +48,9 @@ export const Container = styled.div`
 
 export const Menu = styled.ul`
   height: 100%;
-  width: 70vw;
+  width: 70%;
   position: fixed;
-  top: 60px;
+  top: 0;
   left: 100vw;
   padding: 10px;
   display: flex;
@@ -57,10 +61,22 @@ export const Menu = styled.ul`
   transition: left 0.4s;
   background-color: #fffafc;
   border: 1px solid rgba(92, 5, 39, 0.1);
+  z-index: 6;
 
   li {
     & + li {
       margin-top: 20px;
+    }
+
+    &.close_buttom {
+      width: 100%;
+      text-align: right;
+
+      svg {
+        display: inline-block;
+        margin-right: 10px;
+        margin-top: 10px;
+      }
     }
 
     a {
@@ -88,6 +104,10 @@ export const Menu = styled.ul`
         margin-left: 20px;
       }
 
+      &.close_buttom {
+        display: none;
+      }
+
       a {
         transition: color 0.3s;
 
@@ -97,4 +117,23 @@ export const Menu = styled.ul`
       }
     }
   }
+`;
+
+export const BackgroundMenu = styled.div<IBackgroundMenu>`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #000;
+  transition: opacity 0.4s;
+
+  ${props =>
+    props.isOpened &&
+    css`
+      visibility: visible;
+      opacity: 0.3;
+    `}
 `;
