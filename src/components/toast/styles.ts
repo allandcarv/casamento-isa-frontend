@@ -9,15 +9,17 @@ export const CustomToastContainer = styled(ToastContainer)`
   margin: 0 auto;
 
   .custom_success {
-    background-color: #fffafc;
-    color: #5c0527;
+    background-color: #e6fffa;
+    color: #2e656a;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 
     svg {
-      fill: #5c0527;
+      fill: #2e656a;
     }
 
     .Toastify__progress-bar {
-      background-color: #5c0527;
+      background-color: #2e656a;
     }
   }
 

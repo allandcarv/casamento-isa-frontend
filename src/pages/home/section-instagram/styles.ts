@@ -55,5 +55,9 @@ export const StyledSection = styled.section`
     h1 {
       top: 60px;
     }
+
+    p {
+      margin-top: 60px;
+    }
   }
 `;
