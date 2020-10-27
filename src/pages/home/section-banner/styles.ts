@@ -9,11 +9,10 @@ export const StyledSection = styled.section`
   justify-content: center;
   align-items: center;
 
-  i {
-    width: 80px;
-    height: 80px;
+  > img {
+    width: 100px;
+    height: 100px;
     margin-bottom: 20px;
-    background-image: url(${Banner1});
     filter: invert(8%) sepia(45%) saturate(4740%) hue-rotate(319deg)
       brightness(100%) contrast(106%);
   }
@@ -54,18 +53,14 @@ export const StyledSection = styled.section`
   }
 
   @media only screen and (min-width: 768px) {
-    i {
-      width: 150px;
-      height: 150px;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
+    > img {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 20px;
     }
 
     h1.main_title {
-      font-size: 10rem;
+      font-size: 160px;
 
       span {
         display: inline;

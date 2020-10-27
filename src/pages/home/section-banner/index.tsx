@@ -2,6 +2,7 @@ import React, { RefObject } from 'react';
 import { differenceInCalendarDays } from 'date-fns';
 
 import { StyledSection } from './styles';
+import Banner1 from '../../../assets/images/banner1.svg';
 
 interface ISectionBanner {
   forwardedRef: RefObject<HTMLElement>;
@@ -12,7 +13,7 @@ const Banner: React.FC<ISectionBanner> = ({ forwardedRef }) => {
 
   return (
     <StyledSection id="inicio" ref={forwardedRef}>
-      <i />
+      <img src={Banner1} alt="Casamento Isabelle e Leonardo" />
       <h1 className="main_title">
         Leonardo
         <span>&</span>

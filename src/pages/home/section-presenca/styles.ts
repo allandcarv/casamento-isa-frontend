@@ -7,43 +7,48 @@ export const StyledSection = styled.section`
   align-items: center;
   flex-direction: column;
 
-  h1 {
-    position: absolute;
-    top: 60px;
-  }
+  div.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  p {
-    margin: 40px 0 20px;
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    line-height: 2rem;
-    text-align: center;
+    p {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      line-height: 2rem;
+      text-align: center;
+    }
   }
 
   @media only screen and (min-width: 768px) {
-    p {
-      width: 60%;
-      min-width: 650px;
-      margin-top: 60px;
-      text-align: left;
-    }
+    div.container {
+      flex: 1;
 
-    form {
-      width: 60%;
-      min-width: 650px;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-
-      div.radio_group {
-        width: 25%;
+      p {
+        width: 60%;
+        min-width: 650px;
+        text-align: left;
       }
 
-      div.number_group {
-        width: 35%;
+      form {
+        width: 60%;
+        min-width: 650px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
 
-        & + .number_group {
-          margin-left: 5%;
+        div.radio_group {
+          width: 25%;
+        }
+
+        div.number_group {
+          width: 35%;
+
+          & + .number_group {
+            margin-left: 5%;
+          }
         }
       }
     }

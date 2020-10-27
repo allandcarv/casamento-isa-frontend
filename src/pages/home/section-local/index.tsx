@@ -33,6 +33,7 @@ const Local: React.FC<ISectionLocal> = ({ forwardedRef }) => {
                 rel="noopener noreferrer"
                 href="https://goo.gl/maps/PEeVzEZc82a8QyB88"
                 target="_blank"
+                className="googlemaps_link"
               >
                 aqui
               </a>

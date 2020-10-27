@@ -10,7 +10,9 @@ const Mensagens: React.FC<ISectionMensagens> = ({ forwardedRef }) => {
   return (
     <StyledSection id="mensagens" ref={forwardedRef}>
       <h1>Mensagens</h1>
-      <h2>Em breve...</h2>
+      <div className="container">
+        <span>Em breve...</span>
+      </div>
     </StyledSection>
   );
 };

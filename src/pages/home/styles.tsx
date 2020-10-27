@@ -14,6 +14,7 @@ export const StyledMain = styled.main`
     }
 
     h1 {
+      margin-bottom: auto;
       font-family: 'Parisienne', cursive;
       font-size: 2rem;
       font-weight: normal;
@@ -34,6 +35,7 @@ export const StyledMain = styled.main`
     padding: 0;
 
     > section {
+      padding: 20px 15px;
       min-height: calc(100vh - 100px);
       scroll-margin-top: 60px;
 

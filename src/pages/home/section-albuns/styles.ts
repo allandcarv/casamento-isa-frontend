@@ -7,13 +7,16 @@ export const StyledSection = styled.section`
   justify-content: center;
   align-items: center;
 
-  h1 {
-    position: absolute;
-    top: 60px;
-  }
+  div.container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  h2 {
-    font-size: 2rem;
-    font-weight: normal;
+    span {
+      font-family: 'Parisienne', cursive;
+      font-size: 2rem;
+      font-weight: normal;
+    }
   }
 `;

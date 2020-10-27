@@ -49,7 +49,7 @@ const SectionInstagram: React.FC<ISectionInstagram> = ({ forwardedRef }) => {
       {loading && <LoadingElement />}
 
       {!loading && (
-        <>
+        <div className="container">
           <p>
             A Hashtag oficial do nosso casamento é #CasamentoBelinhaELeo. As
             fotos que são postadas no Instagram com esta Hashtag serão exibidas
@@ -65,7 +65,7 @@ const SectionInstagram: React.FC<ISectionInstagram> = ({ forwardedRef }) => {
               ))}
             </Swiper>
           </div>
-        </>
+        </div>
       )}
     </StyledSection>
   );

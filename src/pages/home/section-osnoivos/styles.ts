@@ -73,39 +73,41 @@ export const StyledSection = styled.section`
   }
 
   @media only screen and (min-width: 768px) {
-    padding: 60px;
+    div.container {
+      flex: 1;
 
-    div.pictures {
-      position: relative;
-      margin-bottom: 60px;
+      div.pictures {
+        position: relative;
+        margin-bottom: 60px;
 
-      > img {
-        position: absolute;
-        bottom: 60px;
-        width: 350px;
-      }
-
-      div {
-        img {
-          width: 500px;
+        > img {
+          position: absolute;
+          bottom: 60px;
+          width: 350px;
         }
-      }
 
-      div.noivo {
-        align-items: flex-end;
-
-        span {
-          margin-right: 190px;
-          font-size: 3rem;
+        div {
+          img {
+            width: 500px;
+          }
         }
-      }
 
-      div.noiva {
-        align-items: flex-start;
+        div.noivo {
+          align-items: flex-end;
 
-        span {
-          margin-left: 190px;
-          font-size: 3rem;
+          span {
+            margin-right: 190px;
+            font-size: 3rem;
+          }
+        }
+
+        div.noiva {
+          align-items: flex-start;
+
+          span {
+            margin-left: 190px;
+            font-size: 3rem;
+          }
         }
       }
     }
